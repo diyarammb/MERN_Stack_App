@@ -1,0 +1,1 @@
+// All auth routes call from here 
