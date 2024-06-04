@@ -1,11 +1,28 @@
 import { useState, useEffect } from "react";
+import axios from "axios";
 
 const Login = () => {
-  const [login_data, formdata] = useState({ name: "" });
+  const [login_data, user_data] = useState({ email: "", password: "" });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    user_data({ ...login_data, [name]: value });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(e);
+try{
+    axios
+      .post("http://localhost:3001/api/users/", login_data)
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch(error => {
+        console.log("Error", error);
+      });
+    }catch(err){
+      console.log(`Api Not Hit ${err.message}`)
+    }
   };
 
   return (
@@ -26,6 +43,9 @@ const Login = () => {
                     className="form-control bg-light"
                     id="Email"
                     placeholder="Email"
+                    name="email"
+                    value={login_data.email}
+                    onChange={handleChange}
                   ></input>
                 </div>
 
@@ -36,10 +56,15 @@ const Login = () => {
                     className="form-control bg-light"
                     id="password"
                     placeholder="Password"
+                    name="password"
+                    value={login_data.password}
+                    onChange={handleChange}
                   ></input>
                 </div>
                 <div className="d-grid gap-2 col-4 mx-auto">
-                  <button className="btn btn-dark rounded-pill ">Submit</button>
+                  <button type="submit" className="btn btn-dark rounded-pill ">
+                    Submit
+                  </button>
                 </div>
               </form>
             </div>
