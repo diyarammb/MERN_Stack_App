@@ -1,7 +1,12 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './index.css'
 import Home from "./Pages/Main/Home";
 import Product from './Pages/Main/Products'
+import Register from "./Pages/Main/Auth/Register";
+import Login from "./Pages/Main/Auth/Login";
+import UserGroup from "./Pages/Main/Groups/UserGroup";
+import UserGroupListing from "./Pages/Main/Groups/UserGroupListing";
 
 const App =()=> {
   return (
@@ -9,6 +14,13 @@ const App =()=> {
     <Routes>
       <Route path="/" element={<Home />} /> 
       <Route path="/product" element={<Product />} /> 
+      {/* auth part */}
+      <Route path="/register" element={<Register />} /> 
+      <Route path="/login" element={<Login />} /> 
+
+      {/* Group part */}
+      <Route path="/usergroup" element={<UserGroup />} /> 
+      <Route path="/usergroupListing" element={<UserGroupListing />} /> 
     </Routes>
   </BrowserRouter>
   );

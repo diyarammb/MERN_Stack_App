@@ -1,4 +1,4 @@
-const connection = require("../Models/db");
+const connection = require("../models/db");
 const bcrypt = require('bcryptjs')
 
 const Login = (req, res) => {
