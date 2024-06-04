@@ -14,53 +14,56 @@ const UserGroupListing = () => {
       </div>
       <div className="container mt-4">
         <div className="row ">
-          <div className="col-md-4"></div>
-          <div className="col-md-4">
+          <div className="col-md-3"></div>
+          <div className="col-md-6">
             <div className="card p-4 ">
               <form onSubmit={handleSubmit}>
-                {/* email */}
-                <div className="mb-3">
-                  <input
-                    type="text"
-                    className="form-control bg-light"
-                    id="Name"
-                    placeholder="Group Name"
-                  ></input>
-                </div>
-
-                {/* password */}
-                <div className="mb-3">
-                  <input
-                    type="number"
-                    className="form-control bg-light"
-                    id="number"
-                    placeholder="Group Code"
-                  ></input>
-                </div>
                 <div className="mb-3">
                   <div className="input-group">
-                     
                     <input
                       type="text"
-                      aria-label="First name"
+                      aria-label="Group Name"
                       className="m-1 form-control bg-light"
+                      placeholder="Group Name"
                     />
                     <input
                       type="text"
-                      aria-label="Last name"
+                      aria-label="Group Code"
                       className="m-1 form-control bg-light"
+                      placeholder="Group Code"
                     />
-                    <i className="fa fa-user"></i>
+                    <button className="m-1">Add</button>
+                    <button className="m-1">edit</button>
+                    <button className="m-1">del</button>
+                    <button className="m-1">view</button>
+                  </div>
+                  <div className="input-group">
+                    <input
+                      type="text"
+                      aria-label="Group Name"
+                      className="m-1 form-control bg-light"
+                      placeholder="Group Name"
+                    />
+                    <input
+                      type="text"
+                      aria-label="Group Code"
+                      className="m-1 form-control bg-light"
+                      placeholder="Group Code"
+                    />
+                    <button className="m-1">Add</button>
+                    <button className="m-1">edit</button>
+                    <button className="m-1">del</button>
+                    <button className="m-1">view</button>
                   </div>
                 </div>
 
                 <div className=" ">
-                  <button className="btn btn-dark rounded-pill ">Submit</button>
+                  <button className="btn btn-dark rounded-pill ">Add New</button>
                 </div>
               </form>
             </div>
           </div>
-          <div className="col-md-4"></div>
+          <div className="col-md-3"></div>
         </div>
       </div>
     </>
