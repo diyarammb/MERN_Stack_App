@@ -1,5 +1,5 @@
 const express = require('express');
-const Login = require('./app/controllers/LoginController')
+const Login = require("./app/controllers/LoginController")
 const app = express();
 const bodyParser = require('body-parser'); 
 const bcrypt = require('bcryptjs');

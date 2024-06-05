@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+
 import axios from "axios";
 
 const Login = () => {
@@ -11,17 +12,21 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-try{
-    axios
-      .post("http://localhost:3001/api/users/", login_data)
-      .then((response) => {
-        console.log(response.data);
-      })
-      .catch(error => {
-        console.log("Error", error);
-      });
-    }catch(err){
-      console.log(`Api Not Hit ${err.message}`)
+    try {
+      axios
+        .post("http://localhost:3001/api/users/", login_data)
+        .then((response) => {
+          if (response.data.status === 200) {
+            console.log(response.data);
+          }else{
+            console.log(response.data)
+          }
+        })
+        .catch((error) => {
+          console.log("Error", error);
+        });
+    } catch (err) {
+      console.log(`Api Not Hit ${err.message}`);
     }
   };
 

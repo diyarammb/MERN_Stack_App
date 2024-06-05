@@ -7,6 +7,7 @@ import Register from "./Pages/Main/Auth/Register";
 import Login from "./Pages/Main/Auth/Login";
 import UserGroup from "./Pages/Main/Groups/UserGroup";
 import UserGroupListing from "./Pages/Main/Groups/UserGroupListing";
+import Dashboard from "./Pages/Main/Dashboard/Index";
 
 const App =()=> {
   return (
@@ -21,6 +22,7 @@ const App =()=> {
       {/* Group part */}
       <Route path="/usergroup" element={<UserGroup />} /> 
       <Route path="/usergroupListing" element={<UserGroupListing />} /> 
+      <Route path="/dashboard" element={<Dashboard />} /> 
     </Routes>
   </BrowserRouter>
   );
